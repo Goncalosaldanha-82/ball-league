@@ -60,6 +60,22 @@
       "variant": "TIGHT GAPS",
       "mode": "ELIMINATION",
       "date": "2026-11-20"
+    },
+    "5": {
+      "seed": 5000,
+      "ranking": [
+        "YELLOW",
+        "PINK",
+        "BLUE",
+        "GREEN",
+        "RED",
+        "CYAN",
+        "ORANGE",
+        "PURPLE"
+      ],
+      "variant": "HEAVY",
+      "mode": "GROW",
+      "date": "2026-11-20"
     }
   }
 }
