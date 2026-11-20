@@ -1,0 +1,6 @@
+numpy>=2.0
+pycairo>=1.26
+imageio-ffmpeg>=0.5
+google-api-python-client>=2.100
+google-auth-oauthlib>=1.2
+tzdata>=2024.1

@@ -1,0 +1,45 @@
+name: Ball League daily
+
+# Renders the next match and uploads it so it goes public at 06:00 Lisbon time (YouTube publishAt).
+# Two triggers: the second is a backup if GitHub delays/skips the first; the script never publishes twice.
+on:
+  schedule:
+    - cron: "30 2 * * *"
+    - cron: "30 4 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ball-league-daily
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: System libraries (cairo + Arial-compatible font)
+        run: sudo apt-get update -q && sudo apt-get install -y -q libcairo2-dev pkg-config fonts-liberation
+      - run: pip install -r requirements.txt
+      - name: YouTube token (from the encrypted repository secret)
+        env:
+          YT_TOKEN_JSON: ${{ secrets.YT_TOKEN_JSON }}
+        run: printf '%s' "$YT_TOKEN_JSON" > token.json
+      - name: Render and publish
+        env:
+          PYTHONIOENCODING: utf-8
+        run: python cloud_daily.py
+      - name: Save the league state in the repository
+        run: |
+          rm -f token.json
+          git config user.name "ball-league-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add league.json published.json
+          git diff --cached --quiet || (git commit -m "Daily match $(date -u +%F)" && git push)

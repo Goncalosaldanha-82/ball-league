@@ -1,0 +1,65 @@
+{
+  "season": 1,
+  "matches": {
+    "1": {
+      "seed": 1002,
+      "ranking": [
+        "PINK",
+        "GREEN",
+        "RED",
+        "ORANGE",
+        "YELLOW",
+        "BLUE",
+        "PURPLE",
+        "CYAN"
+      ],
+      "date": "2026-11-17"
+    },
+    "2": {
+      "seed": 2000,
+      "ranking": [
+        "BLUE",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "PINK",
+        "PURPLE",
+        "ORANGE",
+        "YELLOW"
+      ],
+      "variant": "TURBO SPIN",
+      "date": "2026-11-18"
+    },
+    "3": {
+      "seed": 3003,
+      "ranking": [
+        "PURPLE",
+        "RED",
+        "ORANGE",
+        "CYAN",
+        "PINK",
+        "YELLOW",
+        "GREEN",
+        "BLUE"
+      ],
+      "variant": "LOW GRAVITY",
+      "date": "2026-11-19"
+    },
+    "4": {
+      "seed": 4003,
+      "ranking": [
+        "YELLOW",
+        "BLUE",
+        "PINK",
+        "PURPLE",
+        "RED",
+        "CYAN",
+        "ORANGE",
+        "GREEN"
+      ],
+      "variant": "TIGHT GAPS",
+      "mode": "ELIMINATION",
+      "date": "2026-11-20"
+    }
+  }
+}
