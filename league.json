@@ -76,6 +76,22 @@
       "variant": "HEAVY",
       "mode": "GROW",
       "date": "2026-11-20"
+    },
+    "6": {
+      "seed": 6000,
+      "ranking": [
+        "PINK",
+        "GREEN",
+        "BLUE",
+        "PURPLE",
+        "RED",
+        "YELLOW",
+        "CYAN",
+        "ORANGE"
+      ],
+      "variant": "CLASSIC",
+      "mode": "MULTIPLY",
+      "date": "2026-11-21"
     }
   }
 }
