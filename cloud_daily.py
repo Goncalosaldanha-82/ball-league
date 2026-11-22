@@ -33,10 +33,11 @@ LISBON = ZoneInfo("Europe/Lisbon")
 HOUR = 6
 
 
-def target_slot(now):
-    """Next 06:00 Lisbon at or after now (minus a small grace so a 05:59 run still targets today)."""
+def target_slot(now, days):
+    """Today's 06:00 Lisbon if today has no video yet (published at once if 06:00 already passed),
+    otherwise tomorrow's 06:00. The workflow runs every hour, so tomorrow's video is scheduled well ahead."""
     slot = now.astimezone(LISBON).replace(hour=HOUR, minute=0, second=0, microsecond=0)
-    if now.astimezone(LISBON).hour >= 12:      # an evening run prepares tomorrow morning
+    if slot.date().isoformat() in days:
         slot += datetime.timedelta(days=1)
     return slot
 
@@ -46,9 +47,9 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
     now = datetime.datetime.now(datetime.timezone.utc)
-    slot = target_slot(now)
-    day = slot.date().isoformat()
     pub = json.loads(PUBLISHED.read_text(encoding="utf-8")) if PUBLISHED.exists() else {}
+    slot = target_slot(now, {d.get("publish_date") for d in pub.values()})
+    day = slot.date().isoformat()
     done_day = [m for m, d in pub.items() if d.get("publish_date") == day]
     if done_day:
         print(f"nothing to do: match {done_day[0]} is already set for {day} 06:00 Lisbon")
