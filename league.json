@@ -92,6 +92,22 @@
       "variant": "CLASSIC",
       "mode": "MULTIPLY",
       "date": "2026-11-21"
+    },
+    "7": {
+      "seed": 7000,
+      "ranking": [
+        "YELLOW",
+        "GREEN",
+        "ORANGE",
+        "CYAN",
+        "RED",
+        "PURPLE",
+        "PINK",
+        "BLUE"
+      ],
+      "variant": "TURBO SPIN",
+      "mode": "PAINT",
+      "date": "2026-11-22"
     }
   }
 }
