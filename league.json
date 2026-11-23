@@ -108,6 +108,22 @@
       "variant": "TURBO SPIN",
       "mode": "PAINT",
       "date": "2026-11-22"
+    },
+    "8": {
+      "seed": 8003,
+      "ranking": [
+        "YELLOW",
+        "PINK",
+        "CYAN",
+        "GREEN",
+        "PURPLE",
+        "RED",
+        "BLUE",
+        "ORANGE"
+      ],
+      "variant": "LOW GRAVITY",
+      "mode": "ESCAPE",
+      "date": "2026-11-23"
     }
   }
 }
