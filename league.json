@@ -124,6 +124,22 @@
       "variant": "LOW GRAVITY",
       "mode": "ESCAPE",
       "date": "2026-11-23"
+    },
+    "9": {
+      "seed": 9001,
+      "ranking": [
+        "GREEN",
+        "BLUE",
+        "PURPLE",
+        "PINK",
+        "ORANGE",
+        "RED",
+        "YELLOW",
+        "CYAN"
+      ],
+      "variant": "TIGHT GAPS",
+      "mode": "ELIMINATION",
+      "date": "2026-11-24"
     }
   }
 }
